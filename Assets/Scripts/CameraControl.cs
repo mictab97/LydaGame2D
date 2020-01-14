@@ -27,7 +27,7 @@ public class CameraControl : MonoBehaviour
     void FixedUpdate()
     {
         //camera
-        Vector3 targetPos = SetPos(cameraTargetPos, target.position.x, target.position.y, transform.position.z);
+        Vector3 targetPos = SetPos(cameraTargetPos, transform.position.x, target.position.y, transform.position.z);
 
         transform.position = Vector3.Lerp(transform.position, targetPos, 0.25f);
 
