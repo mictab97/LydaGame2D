@@ -5,28 +5,33 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-public float ms = 6;
+    public float ms = 6;
 
-void FixedUpdate()
-{
-    if (Input.GetKey(KeyCode.LeftArrow))
+    void FixedUpdate()
     {
-        transform.Translate(Vector3.left * ms * Time.deltaTime);
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Translate(Vector3.left * ms * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Translate(Vector3.right * ms * Time.deltaTime);
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            Jump();
+        }
     }
 
-    if (Input.GetKey(KeyCode.RightArrow))
+    public void SetPosition(Vector3 pos)
     {
-        transform.Translate(Vector3.right * ms * Time.deltaTime);
+        transform.position = pos;
     }
 
-    Jump();
-}
-
-void Jump()
-{
-    if (Input.GetButtonDown("Jump"))
+    public void Jump()
     {
-        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 5f), ForceMode2D.Impulse);
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * 6f;
     }
-}
 }

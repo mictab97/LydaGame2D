@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class JoystickMovement : MonoBehaviour
 {
-    public Transform player;
+    [SerializeField]
+    private Transform _groundCheck;
+
+    [SerializeField]
+    private int _jumpMax = 2;
+
+    private int _currentJump = 0;
+
+    public float velocity = 1;
+    private Rigidbody2D rb;
+    public bool isOnGround;
+    public bool finalPhase = false;
+
+
+    public Player player;
     public float speed = 5.0f;
     private bool touchStart = false;
     private Vector3 touchOrigin;
     private Vector3 touchOffset;
     private float timer;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -25,7 +33,7 @@ public class JoystickMovement : MonoBehaviour
             timer = 0f;
             touchStart = true;
             touchOrigin = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 0));
-            touchOffset = player.position - touchOrigin;
+            touchOffset = player.transform.position - touchOrigin;
 
             //Input.mousePosition.y,
         }
@@ -37,16 +45,17 @@ public class JoystickMovement : MonoBehaviour
                 return;
             }
             touchOrigin = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 0));
-            player.position = touchOrigin + touchOffset;
+            player.SetPosition(touchOrigin + touchOffset);
 
             //Input.mousePosition.y,
         }
-        else
+        else if (Input.GetMouseButtonUp(0))
         {
             touchStart = false;
             if (timer <= 0.1f)
             {
-                // jump
+                //jump
+                player.Jump();
             }
         }
     }
@@ -59,6 +68,14 @@ public class JoystickMovement : MonoBehaviour
         //     moveCharacter(direction * 1);
         // }
     }
+
+   // private void OnTriggerEnter2D(Collider2D collision)
+    //{
+     //   if (collision.tag == "GameOver")
+    //    {
+    //        gameManager.GameOver();
+     //   }
+    //}
 
     void moveCharacter(Vector2 direction)
     {

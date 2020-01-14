@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movingPlatform : MonoBehaviour
+public class Coin : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
