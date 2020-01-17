@@ -1,11 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public Text countText;
 
     public float ms = 6;
+    private int count;
+
+    void Start() 
+    {
+        count = 0;
+        SetCountText ();
+    }
 
     void FixedUpdate()
     {
@@ -33,5 +42,20 @@ public class Player : MonoBehaviour
     public void Jump()
     {
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * 6f;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag ("PickUp"))
+        {
+            other.gameObject.SetActive (false);
+            count = count +1;
+            SetCountText ();
+        }
+    }
+
+    void SetCountText ()
+    {
+        countText.text = "Count:" + count.ToString ();
     }
 }
