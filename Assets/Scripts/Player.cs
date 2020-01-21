@@ -56,6 +56,6 @@ public class Player : MonoBehaviour
 
     void SetCountText ()
     {
-        countText.text = "Count:" + count.ToString ();
+        countText.text = "collected:" + count.ToString ();
     }
 }
