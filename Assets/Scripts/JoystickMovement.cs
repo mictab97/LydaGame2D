@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class JoystickMovement : MonoBehaviour
 {
+    [SerializeField] 
+    private bool m_AirControl = true;
+    
     [SerializeField]
     private Transform _groundCheck;
 
@@ -58,6 +61,8 @@ public class JoystickMovement : MonoBehaviour
                 player.Jump();
             }
         }
+
+
     }
 
     private void FixedUpdate() {
