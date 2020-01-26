@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public Text countText;
+    public Text skullText;
 
     public float ms = 6;
     private int count;
@@ -52,6 +53,18 @@ public class Player : MonoBehaviour
             count = count +1;
             SetCountText ();
         }
+
+        else if (other.gameObject.CompareTag ("Skull"))
+        {
+            other.gameObject.SetActive (false);
+            count = count +1;
+            SetSkullText ();
+        }
+    }
+
+    void SetSkullText ()
+    {
+        skullText.text = "damage:" + count.ToString ();
     }
 
     void SetCountText ()
