@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private int _lives = 3;
+
+    private UIManager _UIManager;
+    //private SpawnManger _spawnManager;
+
     public Text countText;
     public Text skullText;
 
@@ -70,5 +76,21 @@ public class Player : MonoBehaviour
     void SetCountText ()
     {
         countText.text = "bug coin:" + count.ToString ();
+    }
+
+    public void Damage()
+    {
+        //reduce lives by 1
+        _lives -= 1;
+
+        //check if dead
+        // destroy us
+        if (_lives < 1)
+        {
+            //_spawnManager.OnPlayerDeath();
+            Destroy(this.gameObject);
+            Time.timeScale = 0f;
+        }
+        _UIManager.UpdateLives(_lives);
     }
 }
