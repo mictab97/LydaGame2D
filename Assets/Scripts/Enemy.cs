@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float _speed = 4f;
 
-    [SerializeField]
     private Player _player;
 
     //private Animator _animator;

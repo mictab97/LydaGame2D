@@ -48,7 +48,8 @@ public class JoystickMovement : MonoBehaviour
                 return;
             }
             touchOrigin = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 0));
-            player.SetPosition(touchOrigin + touchOffset);
+            Vector3 positionDrag = new Vector3(touchOrigin.x + touchOffset.x, player.transform.position.y);
+            player.SetPosition(positionDrag);
 
             //Input.mousePosition.y,
         }
