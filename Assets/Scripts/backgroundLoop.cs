@@ -30,7 +30,7 @@ public class backgroundLoop : MonoBehaviour
         {
             GameObject c = Instantiate(clone) as GameObject;
             c.transform.SetParent(obj.transform);
-            c.transform.position = new Vector3(objectWidth * i, obj.transform.position.y, obj.transform.position.z);
+            c.transform.position = new Vector3(obj.transform.position.y, objectWidth * i, obj.transform.position.z);
             c.name = obj.name + i;
         }
         Destroy(clone);

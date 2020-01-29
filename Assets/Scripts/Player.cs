@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +14,8 @@ public class Player : MonoBehaviour
     //private SpawnManger _spawnManager;
     public Animator animator;
 
-    public Text countText;
+    public TextMeshProUGUI countText;
+    //public Text countText;
     public Text skullText;
 
     public float ms = 6;
@@ -88,7 +90,7 @@ public class Player : MonoBehaviour
         else if (other.gameObject.CompareTag ("Skull"))
         {
             other.gameObject.SetActive (false);
-            count = count +1;
+            //count = count +1;
             SetSkullText ();
             Damage();
         }
