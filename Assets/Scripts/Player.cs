@@ -20,6 +20,11 @@ public class Player : MonoBehaviour
     private int count;
     private int _score = 0;
 
+    [SerializeField]
+    private Transform groundCheck;
+
+    public GameObject YouwinCanvas;
+
     void Start() 
     {
         animator.GetComponent<Animator>();
@@ -60,6 +65,7 @@ public class Player : MonoBehaviour
             animator.SetBool("OnWalk", false);
             animator.SetBool("OnWalk", true);
         }
+        
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
@@ -88,7 +94,7 @@ public class Player : MonoBehaviour
         else if (other.gameObject.CompareTag ("Skull"))
         {
             other.gameObject.SetActive (false);
-            count = count +1;
+            //count = count +1;
             SetSkullText ();
             Damage();
         }
@@ -125,5 +131,19 @@ public class Player : MonoBehaviour
         {
             _score +=1;
             _uiManager.SetScoreText(_score);
+
+            if (_score >= 4)
+            {
+                Win();
+            }
         }
+
+    public void Win()
+    {
+        if (_score > 3)
+        {
+            Time.timeScale = 0f;
+        }
+        YouwinCanvas.SetActive(true);
+    }
 }
