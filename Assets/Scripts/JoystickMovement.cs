@@ -66,14 +66,7 @@ public class JoystickMovement : MonoBehaviour
 
     }
 
-    private void FixedUpdate() {
-        // if(touchStart)
-        // {
-        //     Vector2 offset = pointB - pointA;
-        //     Vector2 direction = Vector2.ClampMagnitude(offset, 1.0f);
-        //     moveCharacter(direction * 1);
-        // }
-    }
+
 
    // private void OnTriggerEnter2D(Collider2D collision)
     //{
