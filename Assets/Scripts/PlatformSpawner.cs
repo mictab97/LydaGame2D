@@ -41,6 +41,8 @@ IEnumerator SpawnEnemyRoutine()
 
             // wait for 5 seconds
             yield return new WaitForSeconds(_spawnTimer);
+
+            Destroy(this.gameObject, 5);
         }
     }
 
