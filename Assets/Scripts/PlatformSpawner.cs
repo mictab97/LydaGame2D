@@ -5,6 +5,12 @@ using UnityEngine;
 public class PlatformSpawner : MonoBehaviour
 {
     [SerializeField]
+    private GameObject _coinsPrefab;
+
+    [SerializeField]
+    private GameObject _coinsContainer;
+
+    [SerializeField]
     private GameObject _enemyPrefab;
 
     [SerializeField]
@@ -22,12 +28,16 @@ public class PlatformSpawner : MonoBehaviour
     [SerializeField]
     private float _enemyplatformspawnTimer;
 
+    [SerializeField]
+    private float _coinsTimer;
+
     private bool _stopSpawning = false;
 
 void Start()
     {
         StartCoroutine(SpawnEnemyRoutine());
         StartCoroutine(SpawnEnemyplatformRoutine());
+        StartCoroutine(SpawnCoinsRoutine());
     }
 
 IEnumerator SpawnEnemyRoutine()
@@ -41,8 +51,6 @@ IEnumerator SpawnEnemyRoutine()
 
             // wait for 5 seconds
             yield return new WaitForSeconds(_spawnTimer);
-
-            Destroy(this.gameObject, 5);
         }
     }
 
@@ -57,6 +65,20 @@ IEnumerator SpawnEnemyplatformRoutine()
 
             // wait for 5 seconds
             yield return new WaitForSeconds(_enemyplatformspawnTimer);
+        }
+    }
+
+IEnumerator SpawnCoinsRoutine()
+    {
+        while (_stopSpawning == false)
+        {
+            Vector3 spawnPos = new Vector3(Random.Range(-3.7f, 3.7f), transform.position.y, 0);
+
+            GameObject newCoins = Instantiate(_coinsPrefab, spawnPos, Quaternion.identity);
+            newCoins.transform.SetParent(_coinsContainer.transform);
+
+            // wait for 0.5 seconds
+            yield return new WaitForSeconds(_coinsTimer);
         }
     }
 

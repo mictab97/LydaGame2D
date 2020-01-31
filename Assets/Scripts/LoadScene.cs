@@ -15,7 +15,7 @@ public class LoadScene : MonoBehaviour
         Application.Quit();
     }
 
-    public void RestartGame ()
+    public void RestartGame()
     {
         SceneManager.LoadScene("SampleScene");
     }

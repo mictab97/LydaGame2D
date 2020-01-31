@@ -925,6 +925,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &163427876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 163427877}
+  m_Layer: 0
+  m_Name: CoinPlatform Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &163427877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163427876}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &182438387
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,12 +1531,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 267912406}
-        m_MethodName: RestartGame
-        m_Mode: 1
+        m_MethodName: SceneLoader
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3665,6 +3695,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5553fa26abdea47bfdeed8977b6451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coinsPrefab: {fileID: 6818726154638278358, guid: 047c799fd41337348a6c13b3b5b2aa5b,
+    type: 3}
+  _coinsContainer: {fileID: 163427876}
   _enemyPrefab: {fileID: 7578986233947026226, guid: 6470b130c27508144a8481704d213eca,
     type: 3}
   _enemyContainer: {fileID: 914000127}
@@ -3672,7 +3705,8 @@ MonoBehaviour:
     type: 3}
   _enemyplatformContainer: {fileID: 831996851}
   _spawnTimer: 1
-  _enemyplatformspawnTimer: 4
+  _enemyplatformspawnTimer: 3
+  _coinsTimer: 4
 --- !u!1 &989615308
 GameObject:
   m_ObjectHideFlags: 0
@@ -6985,6 +7019,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f398c199467a91a4fa5a24eebb427faa, type: 3}
+--- !u!1001 &5910168289988496869
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6818726154638278358, guid: 047c799fd41337348a6c13b3b5b2aa5b,
+        type: 3}
+      propertyPath: m_Name
+      value: CoinPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818726154638278358, guid: 047c799fd41337348a6c13b3b5b2aa5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818726154638278353, guid: 047c799fd41337348a6c13b3b5b2aa5b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818726154638278353, guid: 047c799fd41337348a6c13b3b5b2aa5b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818726154638278353, guid: 047c799fd41337348a6c13b3b5b2aa5b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.047852844
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818726154638278353, guid: 047c799fd41337348a6c13b3b5b2aa5b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818726154638278353, guid: 047c799fd41337348a6c13b3b5b2aa5b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818726154638278353, guid: 047c799fd41337348a6c13b3b5b2aa5b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818726154638278353, guid: 047c799fd41337348a6c13b3b5b2aa5b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818726154638278353, guid: 047c799fd41337348a6c13b3b5b2aa5b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818726154638278353, guid: 047c799fd41337348a6c13b3b5b2aa5b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818726154638278353, guid: 047c799fd41337348a6c13b3b5b2aa5b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818726154638278353, guid: 047c799fd41337348a6c13b3b5b2aa5b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 047c799fd41337348a6c13b3b5b2aa5b, type: 3}
 --- !u!1001 &6214471566824309968
 PrefabInstance:
   m_ObjectHideFlags: 0
