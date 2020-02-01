@@ -19,4 +19,9 @@ public class GameManager : MonoBehaviour
     {
         _isGameOver = true;
     }
+
+    public void Mute()
+    {
+        AudioListener.pause = !AudioListener.pause;
+    }
 }

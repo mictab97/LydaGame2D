@@ -103,7 +103,8 @@ public class Player : MonoBehaviour
 
     void SetCountText ()
     {
-        countText.text = "bug coin:" + count.ToString ();
+        countText.text = count.ToString ();
+        //"bug coin:" +
     }
 
     public void Damage()

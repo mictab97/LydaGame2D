@@ -62,10 +62,7 @@ public class JoystickMovement : MonoBehaviour
                 player.Jump();
             }
         }
-
-
     }
-
 
 
    // private void OnTriggerEnter2D(Collider2D collision)

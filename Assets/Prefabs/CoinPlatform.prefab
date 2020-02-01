@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6818726154638278355}
   - component: {fileID: 6818726154638278352}
   - component: {fileID: 6818726154638278354}
+  - component: {fileID: 114497638833097394}
   m_Layer: 0
   m_Name: CoinPlatform
   m_TagString: Untagged
@@ -127,6 +128,18 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &114497638833097394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818726154638278358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce6c02d1a46696f43aa33dab71aeefbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3611083205052518554
 PrefabInstance:
   m_ObjectHideFlags: 0
